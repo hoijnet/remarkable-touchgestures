@@ -87,12 +87,12 @@ void recognize_gestures(struct TouchEvent *f) {
                         //swipe 
                         if (abs(dx) > abs(dy)) {
                             //horizontal
-                            if (dx < 0) {
+                            if (dx < 0 && dx < -300) {
                                 printf("swipe left\n");
 								gesture.type = SwipeLeft; 
 								interpret_gesture(&gesture);
                             }
-                            else {
+                            else if (dx > 0 && dx > 300) {
                                 printf("swipe right\n");
                                 gesture.type = SwipeRight; 
                                 interpret_gesture(&gesture);
