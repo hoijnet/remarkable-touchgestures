@@ -111,7 +111,8 @@ void recognize_gestures(struct TouchEvent *f) {
                         }
                     }
                     break;
-                case 2:
+                case 7:
+                /*
                     dx = segments[0].end.x - segments[1].end.x;
                     dy = segments[0].end.y - segments[1].end.y;
                     distance = (int)sqrt(dx*dx+dy*dy);
@@ -119,6 +120,9 @@ void recognize_gestures(struct TouchEvent *f) {
                         gesture.type = TwoTapWide;
                         interpret_gesture(&gesture);
                     }
+                */
+                    gesture.type = TwoTapWide;
+                    interpret_gesture(&gesture);
                     break;
                 default:
                     printf("%d finger tap\n",segment_count);
