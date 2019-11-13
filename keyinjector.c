@@ -12,7 +12,7 @@
 #include "config.h"
 
 enum Key {Left=105, Right=106, Home=102,Power=116};
-enum TouchStatus {SwipeOnly, SwipeAndTouch,Disabled};
+enum TouchStatus {SwipeOnly, SwipeAndTouch, Disabled};
 static enum TouchStatus touch_status = SwipeOnly;
 int f;
 int w;

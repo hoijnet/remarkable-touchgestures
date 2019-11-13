@@ -87,12 +87,12 @@ void recognize_gestures(struct TouchEvent *f) {
                         //swipe 
                         if (abs(dx) > abs(dy)) {
                             //horizontal
-                            if (dx < 0 && dx < -500) {
+                            if (dx < 0 && dx < -500 && abs(dy) < 150) {
                                 printf("swipe left\n");
 								gesture.type = SwipeLeft; 
 								interpret_gesture(&gesture);
                             }
-                            else if (dx > 0 && dx > 500) {
+                            else if (dx > 0 && dx > 500 && abs(dy) < 150) {
                                 printf("swipe right\n");
                                 gesture.type = SwipeRight; 
                                 interpret_gesture(&gesture);
@@ -111,8 +111,9 @@ void recognize_gestures(struct TouchEvent *f) {
                         }
                     }
                     break;
-                case 7:
                 /*
+                // DISABLE THE FUNCTIONALITY TO ENABLE/DISABLE
+                case 7:
                     dx = segments[0].end.x - segments[1].end.x;
                     dy = segments[0].end.y - segments[1].end.y;
                     distance = (int)sqrt(dx*dx+dy*dy);
@@ -120,10 +121,10 @@ void recognize_gestures(struct TouchEvent *f) {
                         gesture.type = TwoTapWide;
                         interpret_gesture(&gesture);
                     }
-                */
                     gesture.type = TwoTapWide;
                     interpret_gesture(&gesture);
                     break;
+                */
                 default:
                     printf("%d finger tap\n",segment_count);
                     break;
