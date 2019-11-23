@@ -85,8 +85,10 @@ void recognize_gestures(struct TouchEvent *f) {
 						if (velo < SWIPE_VELOCITY) //ignore slow swipes
 							break;
                         //swipe 
+                        
                         if (abs(dx) > abs(dy)) {
                             //horizontal
+                        /*
                             if (dx < 0 && dx < -500 && abs(dy) < 200) {
                                 printf("swipe left\n");
 								gesture.type = SwipeLeft; 
@@ -97,6 +99,7 @@ void recognize_gestures(struct TouchEvent *f) {
                                 gesture.type = SwipeRight; 
                                 interpret_gesture(&gesture);
                             }
+                        */
                         }
                         else {
                             //vertical
